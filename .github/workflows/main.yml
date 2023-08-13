@@ -6,9 +6,6 @@ on:
       username:
         required: true
         type: string
-    secrets:
-      token:
-        required: true
 
 jobs:
   build:
@@ -31,7 +28,7 @@ jobs:
            users: vikramk20
        - uses: trstringer/manual-approval@v1
          with:
-           secret: ${{ secrets.token }}
+           secret: ${{ github.token }}
            approvers: vikramk20   
        - name: Deploy
          run: echo Hello, ${{ inputs.username }}
