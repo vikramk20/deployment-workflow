@@ -31,7 +31,7 @@ jobs:
            users: vikramk20
        - uses: trstringer/manual-approval@v1
          with:
-           secret: ${{ github.TOKEN }}
+           secret: ${{ secrets.token }}
            approvers: vikramk20   
        - name: Deploy
          run: echo Hello, ${{ inputs.username }}
