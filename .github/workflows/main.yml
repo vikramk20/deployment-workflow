@@ -17,4 +17,12 @@ jobs:
     steps:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        run: echo Hello, ${{ inputs.username }}
   
