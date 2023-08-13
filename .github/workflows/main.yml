@@ -19,8 +19,7 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      issues: none
+    
     steps:
        - name: check user permission
          uses: 74th/workflow-permission-action@1.0.0
