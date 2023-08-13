@@ -26,7 +26,7 @@ jobs:
        - name: check user permission
          uses: 74th/workflow-permission-action@1.0.0
          with:
-           users: vikramk2
+           users: vikramk20
           
        - name: Deploy
          run: echo Hello, ${{ inputs.username }}
