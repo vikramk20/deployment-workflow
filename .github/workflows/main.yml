@@ -27,7 +27,10 @@ jobs:
          uses: 74th/workflow-permission-action@1.0.0
          with:
            users: vikramk20
-          
+       - uses: trstringer/manual-approval@v1
+         with:
+           secret: ${{ github.TOKEN }}
+           approvers: vikramk20   
        - name: Deploy
          run: echo Hello, ${{ inputs.username }}
   
