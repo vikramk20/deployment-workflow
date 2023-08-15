@@ -16,7 +16,8 @@ jobs:
         run: echo Hello, ${{ inputs.username }}
       - name: Test
         run: |
-          echo Password is $TESTC
+          echo Password is env.$TESTC
+          echo ${{ secrets.TESTC }}
           if [[ $TESTC == *"PROD"* ]]; then
             echo "This is the PROD password!"
           else
