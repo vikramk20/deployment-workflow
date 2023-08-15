@@ -17,7 +17,7 @@ jobs:
       - name: Test
         run: |
           echo Diret ${{ secrets.ORG_A }}
-          if: $env.ORG_A == 'ORG'
+          if [[ $env.ORG_A == 'ORG' ]]
           then
             echo "This is the PROD password!"
           else
