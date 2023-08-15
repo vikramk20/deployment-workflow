@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
-      - name: Dump Password
       - name: Test
         run: |
           echo Password is $TESTC
