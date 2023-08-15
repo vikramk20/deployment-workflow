@@ -15,8 +15,6 @@ jobs:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
       - name: Test
-        env:
-          TESTC: ${{ secrets.TESTC }}
         run: |
           echo Password is env:TESTC
           echo Password11 is $env:TESTC
