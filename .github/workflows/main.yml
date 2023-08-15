@@ -16,15 +16,16 @@ jobs:
         run: echo Hello, ${{ inputs.username }}
       - name: Test
         run: |
-          echo Password is env:TESTC
-          echo Password11 is $env:TESTC
-          echo Diret ${{ secrets.TESTC }}
-          echo Diret11 ${{ env.TESTC }}
-          if [[ env.TESTC == *"PROD"* ]]; then
+          echo Password is env:ORG_A
+          echo Diret ${{ secrets.ORG_A }}
+          echo Diret11 ${{ env:TESTC }}
+          if [ ORG_A == "ORG" ]]; then
             echo "This is the PROD password!"
           else
             echo "This is NOT the PROD password!"
           fi
+        env:
+          ORG_A: ${{ secrets.ORG_TEST }}
         
   deploy:
     name: deploy
