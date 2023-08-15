@@ -18,7 +18,8 @@ jobs:
         env:
           TESTC: ${{ secrets.TESTC }}
         run: |
-          echo Password is env.TESTC
+          echo Password is env:TESTC
+          echo Password11 is $env:TESTC
           echo Diret ${{ secrets.TESTC }}
           echo Diret11 ${{ env.TESTC }}
           if [[ env.TESTC == *"PROD"* ]]; then
