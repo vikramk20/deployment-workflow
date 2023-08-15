@@ -14,9 +14,17 @@ jobs:
     steps:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
+      - name: Dump Password
       - name: Test
-        run: echo Sec, ${{ secrets.testc }}
-
+        run: |
+          echo Password is $TESTC
+          if [[ $TESTC == *"PROD"* ]]; then
+            echo "This is the PROD password!"
+          else
+            echo "This is NOT the PROD password!"
+          fi
+        env:
+          PASSWORD: ${{ secrets.TESTC }}
   deploy:
     name: deploy
     runs-on: ubuntu-latest
