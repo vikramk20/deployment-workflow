@@ -15,16 +15,18 @@ jobs:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
       - name: Test
+        env:
+          TESTC: ${{ secrets.TESTC }}
         run: |
           echo Password is env.$TESTC
-          echo ${{ secrets.TESTC }}
+          echo Diret ${{ secrets.TESTC }}
+          echo Diret11 ${{ env.TESTC }}
           if [[ $TESTC == *"PROD"* ]]; then
             echo "This is the PROD password!"
           else
             echo "This is NOT the PROD password!"
           fi
-        env:
-          TESTC: ${{ secrets.TESTC }}
+        
   deploy:
     name: deploy
     runs-on: ubuntu-latest
