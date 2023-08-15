@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Build
         run: echo Hello, ${{ inputs.username }}
+      - name: Test
+        run: echo Sec, ${{ secrets.testc }}
 
   deploy:
     name: deploy
